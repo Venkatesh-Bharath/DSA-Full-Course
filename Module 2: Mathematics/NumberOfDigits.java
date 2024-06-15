@@ -4,7 +4,7 @@ public class NumberOfDigits {
     public static void main(String[] args) {
         int number = 12345;
         int count = countDigits(number);
-        System.out.println("Number of digits in " + number + ": " + count);
+        System.out.println("Number of digits in " + number + ":" + count);
     }
 
     public static int countDigits(int number) {

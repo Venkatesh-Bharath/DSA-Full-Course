@@ -420,7 +420,117 @@ public class TwoPointerPairs {
 }
 ```
 
-# 10. Find triplet in an array which gives sum X
+### 10. Find pair in an unsorted array which gives sum X
+
+**Explanation:**
+Given an unsorted array, we need to find all pairs of elements whose sum equals a specified target \( X \). To efficiently solve this problem, we can use a hash set to keep track of elements we have seen so far while iterating through the array.
+
+**Java Code:**
+```java
+import java.util.*;
+
+public class PairSumUnsortedArray {
+    public static List<List<Integer>> findPairs(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Set<Integer> seen = new HashSet<>();
+
+        for (int num : nums) {
+            int complement = target - num;
+            if (seen.contains(complement)) {
+                List<Integer> pair = Arrays.asList(num, complement);
+                result.add(pair);
+            }
+            seen.add(num);
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 4, 3, 5, 7, 8, 9};
+        int target = 7;
+        List<List<Integer>> pairs = findPairs(nums, target);
+        if (!pairs.isEmpty()) {
+            System.out.println("Pairs with sum " + target + " are:");
+            for (List<Integer> pair : pairs) {
+                System.out.println(pair);
+            }
+        } else {
+            System.out.println("No pairs found with sum " + target);
+        }
+    }
+}
+```
+
+**Explanation of the Code:**
+- We use a hash set `seen` to store elements as we iterate through the array `nums`.
+- For each element `num` in `nums`, we calculate `complement = target - num`.
+- If `complement` is found in `seen`, it means we have found a pair `(num, complement)` that sums to `target`, and we add this pair to the `result`.
+- Otherwise, we add `num` to `seen` and continue.
+- This approach runs in O(n) time complexity due to the single pass through the array and constant time operations on the hash set.
+
+### 11. Find pair in a sorted array which gives sum X
+
+**Explanation:**
+In a sorted array, we can use a two-pointer technique to find pairs whose sum equals a specified target \( X \). We initialize two pointers, one at the beginning (`left`) and one at the end (`right`) of the array, and adjust them based on whether the current sum of elements at these pointers is less than or greater than the target.
+
+**Java Code:**
+```java
+import java.util.*;
+
+public class PairSumSortedArray {
+    public static List<List<Integer>> findPairs(int[] nums, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == target) {
+                List<Integer> pair = Arrays.asList(nums[left], nums[right]);
+                result.add(pair);
+                left++;
+                right--;
+                // Skip duplicates
+                while (left < right && nums[left] == nums[left - 1]) left++;
+                while (left < right && nums[right] == nums[right + 1]) right--;
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int target = 7;
+        List<List<Integer>> pairs = findPairs(nums, target);
+        if (!pairs.isEmpty()) {
+            System.out.println("Pairs with sum " + target + " are:");
+            for (List<Integer> pair : pairs) {
+                System.out.println(pair);
+            }
+        } else {
+            System.out.println("No pairs found with sum " + target);
+        }
+    }
+}
+```
+
+**Explanation of the Code:**
+- We initialize `left` and `right` pointers at the beginning and end of the sorted array `nums`.
+- While `left` is less than `right`, we compute the sum of elements at `nums[left]` and `nums[right]`.
+- If the sum equals `target`, we add the pair `(nums[left], nums[right])` to `result`, increment `left`, and decrement `right`.
+- If the sum is less than `target`, we increment `left` to increase the sum.
+- If the sum is greater than `target`, we decrement `right` to decrease the sum.
+- We also skip duplicates by checking if the current element is the same as the previous one to avoid duplicates in the result.
+- This approach runs in O(n) time complexity due to the single pass through the array with constant time operations for each pointer adjustment.
+
+
+# 12. Find triplet in an array which gives sum X
 
 **Explanation:**
 To find triplets in an array that sum up to a given value, you can use a similar two-pointer approach within a loop to fix one element and find the other two.
@@ -473,8 +583,8 @@ public class ThreeSum {
     }
 }
 ```
-
-# 11. Median of two sorted arrays
+# 13. Problems(With Video Solutions)
+# 14. Median of two sorted arrays
 
 **Explanation:**
 To find the median of two sorted arrays efficiently, you can use a combination of binary search and partitioning to divide both arrays into two parts such that the median can be found.
@@ -535,7 +645,7 @@ public class MedianOfTwoSortedArrays {
 }
 ```
 
-# 12. Majority Element
+# 15. Majority Element
 
 **Explanation:**
 A majority element in an array is an element that appears more than n/2 times (where n is the size of the array). You can find this element efficiently using Moore's Voting Algorithm, which runs in O(n) time complexity.

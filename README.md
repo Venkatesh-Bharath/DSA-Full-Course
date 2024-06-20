@@ -115,36 +115,33 @@ Data Structures and Algorithms
  14. Median of two sorted arrays
  15. Majority Element
 # Module 7: Sorting
- 1. Implementation of C++ STL sort() function in Arrays and Vector
- 2. Time Complexities
- 3. Sorting in Java
- 4. Arrays.sort() in Java
- 5. Collection.sort() in Java
- 6. Stability in Sorting Algorithms
- 7. Examples of Stable and Unstable Algos
- 8. Insertion Sort  9. Merge Sort
- 9. Problems(With Video Solutions) 
- 10. Intersection of 2 sorted arrays
- 12. Union of 2 sorted arrays
- 13. Count Inversions in arrays
- 14. Partitions(With Video Solutions)
- 15. Naive
- 16. Lomuto
- 17. Hoare
- 18. Quick Sort
- 19. Using Lomuto and Hoare
- 20. Time and Space analysis
- 21. Choice of Pivot and Worst case
- 22. Tail call elimination
- 23. Problems(With Video Solutions)
- 24. Kth Smallest element
- 25. Chocolate Distribution Problem
- 26. Sorting arrays with 2 and3 types of elements
- 27. Merge Overlapping Intervals
- 28. Meeting the Maximum Guests
- 29. Cycle Sort
- 30. Counting Sort
- 31. Radix Sort
+1. Implementation of C++ STL sort() function in Arrays and Vector
+2. Time Complexities
+3. Sorting in Java
+4. Arrays.sort() in Java
+5. Collection.sort() in Java
+6. Stability in Sorting Algorithms
+7. Examples of Stable and Unstable Algos
+8. Insertion Sort
+9. Merge Sort
+10. Intersection of 2 sorted arrays
+11. Union of 2 sorted arrays
+12. Count Inversions in arrays
+13. Partitions (With Video Solutions)
+14. Quick Sort
+15. Using Lomuto and Hoare
+16. Time and Space analysis
+17. Choice of Pivot and Worst case
+18. Tail call elimination
+19. Problems (With Video Solutions)
+20. Kth Smallest element
+21. Chocolate Distribution Problem
+22. Sorting arrays with 2 and 3 types of elements
+23. Merge Overlapping Intervals
+24. Meeting the Maximum Guests
+25. Cycle Sort
+26. Counting Sort
+27. Radix Sort
 # Module 8: Matrix
  1. Introduction to Matrix in C++ and Java
  2. Printing matrix in a snake pattern

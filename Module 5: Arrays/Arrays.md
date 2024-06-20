@@ -290,9 +290,7 @@ public class TrappingRainwater {
         int waterTrapped = 0;
 
         leftMax[0] = height[0];
-        for (int i = 1; i
-
- < n; i++) {
+        for (int i = 1; i< n; i++) {
             leftMax[i] = Math.max(leftMax[i - 1], height[i]);
         }
 

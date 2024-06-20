@@ -221,4 +221,3 @@ public class PowerSet {
 - Implement the discussed algorithms and functions.
 - Solve problems using the provided methods to get hands-on practice with bitwise operators.
 
-I hope this helps! If you have any more questions, feel free to ask.
